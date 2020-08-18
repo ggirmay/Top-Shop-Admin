@@ -1,0 +1,361 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <!-- <div formGroupName="general"> -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          [(ngModel)]="user.name"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+          #name="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!name.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>Name is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="moto">Moto</label>
+        <input
+          type="text"
+          [(ngModel)]="user.moto"
+          class="form-control"
+          id="moto"
+          name="moto"
+          placeholder="Enter your moto"
+          required
+          #moto="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!moto.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>Moto is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="imageLogoName">Image Logo Name</label>
+        <input
+          type="text"
+          [(ngModel)]="user.imageLogoName"
+          class="form-control"
+          id="imageLogoName"
+          name="imageLogoName"
+          placeholder="Enter your imageLogoName"
+          required
+          #imageLogoName="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!imageLogoName.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>Image Logo Name is required</small>
+      </div>
+
+      <!-- <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" [(ngModel)]="user.address" 
+            class="form-control"
+            id="address"
+            name="address"
+            placeholder="Enter your address"
+            required #address="ngModel">
+        </div>
+        <div [hidden]="!address.pristine" class="alert alert-danger">Address is required</div> -->
+
+      <!-- </div> -->
+
+      <!-- <div formGroupName="address"> -->
+      <hr />
+      <h3>Please insert your address</h3>
+      <hr />
+      <div class="form-group">
+        <label for="city">City</label>
+        <input
+          type="text"
+          [(ngModel)]="user.city"
+          class="form-control"
+          id="city"
+          name="city"
+          placeholder="Enter your city"
+          required
+          #city="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!city.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>City is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input
+          type="text"
+          [(ngModel)]="user.state"
+          class="form-control"
+          id="state"
+          name="state"
+          placeholder="Enter your state"
+          required
+          #state="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!state.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>State is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="addressLineOne">Address Line One</label>
+        <input
+          type="text"
+          [(ngModel)]="user.addressLineOne"
+          class="form-control"
+          id="addressLineOne"
+          name="addressLineOne"
+          placeholder="Enter your addressLineOne"
+          required
+          #addressLineOne="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!addressLineOne.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>Address Line One is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="addressLineTwo">Address Line Two</label>
+        <input
+          type="text"
+          [(ngModel)]="user.addressLineTwo"
+          class="form-control"
+          id="addressLineTwo"
+          name="addressLineTwo"
+          placeholder="Enter your addressLineTwo"
+          required
+          #addressLineTwo="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!addressLineTwo.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>Address Line Two is required</small>
+      </div>
+
+      <!-- <div formGroupName="userAccount"> -->
+      <hr />
+      <h3>Please insert your User Account</h3>
+      <hr />
+
+      <div class="form-group">
+        <label for="userName">User Name</label>
+        <input
+          type="text"
+          [(ngModel)]="user.userName"
+          class="form-control"
+          id="userName"
+          name="userName"
+          placeholder="Enter your userName"
+          required
+          #userName="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!userName.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>Username is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          [(ngModel)]="user.email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter your email address"
+          required
+          #email="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!email.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>Email is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          [(ngModel)]="user.password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+          #password="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!password.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>Password is required</small>
+      </div>
+
+      <!-- <button  (click)="enabled = '1'" [disabled]="enabled !== '1'" class="primair">
+        Enabled </button> -->
+      <!-- </div> -->
+      <hr />
+      <h3>Please insert your paymentInformation</h3>
+      <hr />
+
+      <!-- <div formGroupName="paymentInformation"> -->
+
+      <div class="form-group">
+        <label for="nameOnCard">Name On Card</label>
+        <input
+          type="text"
+          [(ngModel)]="user.nameOnCard"
+          class="form-control"
+          id="nameOnCard"
+          name="nameOnCard"
+          placeholder="Enter your addressLineTwo"
+          required
+          #nameOnCard="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!nameOnCard.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>Name on Card is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="secCode">SecCode</label>
+        <input
+          type="user_id"
+          [(ngModel)]="user.secCode"
+          class="form-control"
+          id="secCode"
+          name="secCode"
+          placeholder="Enter your secCode "
+          required
+          #secCode="ngModel"
+        />
+        <div
+          [hidden]="!secCode.pristine"
+          class="alert alert-danger"
+          [class.d-none]="name.invalid || name.touched"
+        >
+          <small>secCode is required</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="expDate">expDate</label>
+        <input
+          type="text"
+          [(ngModel)]="user.expDate"
+          class="form-control"
+          id="expDate"
+          name="expDate"
+          placeholder="Enter your expDate"
+          required
+          #expDate="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!expDate.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>expDate is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="cardNumber">card Number</label>
+        <input
+          type="cardNumber"
+          [(ngModel)]="user.cardNumber"
+          class="form-control"
+          id="cardNumber"
+          name="cardNumber"
+          placeholder="Enter your card Number "
+          required
+          #cardNumber="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!cardNumber.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>cardNumber is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="cardType">cardType</label>
+        <input
+          type="cardType"
+          [(ngModel)]="user.cardType"
+          class="form-control"
+          id="cardType"
+          name="cardType"
+          placeholder="Enter your cardType "
+          required
+          #cardType="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!cardType.pristine"
+        class="alert alert-danger"
+        [class.d-none]="name.invalid || name.touched"
+      >
+        <small>cardType is required</small>
+      </div>
+      <!-- </div> -->
+
+      <button
+        type="submit"
+        [disabled]="!userForm.form.valid"
+        class="btn btn-info"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

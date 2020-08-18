@@ -1,0 +1,11 @@
+<ng-container *ngIf="user$ | async as _user">
+	<!-- begin::Offcanvas Toolbar Quick Actions -->
+	<div ktOffcanvas [options]="offcanvasOptions" id="kt_quick_user" class="offcanvas offcanvas-right p-10"
+		[ngStyle]="{ overflow: 'hidden' }">
+
+						<a (click)="logout()" class="btn btn-light-primary btn-bold">
+							Sign Out
+						</a>
+					</div>
+  <!-- end::Offcanvas Toolbar Quick User Actions -->
+</ng-container>

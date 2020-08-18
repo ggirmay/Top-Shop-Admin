@@ -1,0 +1,23 @@
+<!--begin::Header Menu Wrapper-->
+<div #headerMenuOffcanvas class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#" *ngIf="role=='ADMIN'">Admin Panel</a>
+    <a class="navbar-brand" href="#" *ngIf="role=='VENDOR'">Vendor Panel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav" *ngIf="role=='ADMIN'">
+          <a *ngIf="role=='ADMIN'" class="nav-item nav-link" href="http://localhost:4545/ecommerce/customers">Vendor</a>
+        <a *ngIf="role=='ADMIN'" class="nav-item nav-link" routerLink="ecommerce/products">Products</a>
+        </div>
+
+        <div class="navbar-nav" *ngIf="role=='VENDOR'">
+          <a  routerLink="/vendor-management/vendor/createEmployee" class="btn btn-info">Employee</a>
+          <a routerLink="/product" class="btn btn-info">Product</a>
+          <a  href="http://localhost:4545/vendor-management/vendor/createEmployee" class="btn btn-info">Employee</a>
+          <a href="http://localhost:4545/vendor-management/vendor/createEmployee/product" class="btn btn-info">Product</a>
+        </div>
+    </div>
+  </nav>
+</div>

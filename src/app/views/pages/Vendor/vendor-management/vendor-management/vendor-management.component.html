@@ -1,0 +1,97 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit(vendorForm)" #vendorForm="ngForm">
+      <!-- <div formGroupName="general"> -->
+      <div class="form-group">
+        <label for="username">User Name</label>
+        <input
+          type="text"
+          [(ngModel)]="user.username"
+          class="form-control"
+          id="username"
+          name="username"
+          placeholder="Enter user name"
+          required
+          #username="ngModel"
+        />
+      </div>
+      <div
+        [hidden]="!username.pristine"
+        class="alert alert-danger"
+        [class.is.invalid]="username.invalid && username.untouched"
+        [class.d-none]="username.valid || username.touched"
+      >
+        <small>User name is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="text"
+          [(ngModel)]="user.password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+          #password="ngModel"
+        />
+      </div>
+      <div [hidden]="!password.pristine" class="alert alert-danger">
+        <small>Password is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input
+          type="text"
+          [(ngModel)]="user.email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+          #email="ngModel"
+        />
+      </div>
+      <div [hidden]="!email.pristine" class="alert alert-danger">
+        <small>E-Mail is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="role"> Role </label>
+        <br />
+        <select
+          class="custome-select"
+          ngModel
+          id="role"
+          name="role"
+          required
+          #role="ngModel"
+        >
+          <option selected="true" value=""> select the role here</option>
+          <option value="FINANCIAL_MANAGER"> Produce Owner </option>
+          <option value="EMPLOYEE"> Data Entry </option>
+          <option value="FINANCE_OFFICER"> Data Analyst </option>
+          <!-- <option *ngFor = 'let role of roles '> {{roles}} </option> -->
+        </select>
+      </div>
+
+      <!-- <div [hidden]="!address.pristine" class="alert alert-danger">Address is required</div> -->
+
+      <!-- </div> -->
+
+      <!-- <div formGroupName="address"> -->
+
+      <!-- </div> -->
+
+      <button
+        type="submit"
+        [disabled]="!vendorForm.form.valid"
+        class="btn btn-info"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
